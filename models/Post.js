@@ -1,5 +1,5 @@
 const postsCollection = require('../db').db().collection("posts")
-const ObjectID = require('mongodb').ObjectID
+const ObjectId = require('mongodb').ObjectId
 const User = require('./User')
 const sanitizeHTMl = require('sanitize-html')
 const followsCollection = require('../db').db().collection("follows")
@@ -21,7 +21,7 @@ Post.prototype.cleanUp = function() {
       title: sanitizeHTMl(this.data.title.trim(), {allowedTags: [], allowedAttributes: {}}),
       body: sanitizeHTMl(this.data.body.trim(), {allowedTags: [], allowedAttributes: {}}),
       createdDate: new Date(),
-      author: ObjectID(this.userid)
+      author: ObjectId(this.userid)
    }
 }
 
@@ -73,7 +73,7 @@ Post.prototype.actuallyUpdate = function() {
       this.cleanUp()
       this.validate()
       if(!this.errors.length) {
-         await postsCollection.findOneAndUpdate({_id: new ObjectID(this.requestedPostId)}, {$set: {title: this.data.title, body: this.data.body}})
+         await postsCollection.findOneAndUpdate({_id: new ObjectId(this.requestedPostId)}, {$set: {title: this.data.title, body: this.data.body}})
          resolve("success")
       } else {
          resolve("failure")
@@ -114,13 +114,13 @@ Post.reusablePostQuery =  function(uniqueOperations, visitorId, finalOperations 
 
 Post.findSingleById =  function(id, visitorId) {
    return new Promise(async function(resolve, reject) {
-      if(typeof(id) != "string" || !ObjectID.isValid(id)) {
+      if(typeof(id) != "string" || !ObjectId.isValid(id)) {
          reject()
          return
       }
       
       let posts = await Post.reusablePostQuery([
-         {$match: {_id: new ObjectID(id)}}
+         {$match: {_id: new ObjectId(id)}}
       ], visitorId)
 
       if (posts.length) {
@@ -145,7 +145,7 @@ Post.delete = function(postIdToDelete, currentUserId) {
       try {
          let post = await Post.findSingleById(postIdToDelete, currentUserId)
          if (post.isVisitorOwner) {
-            await postsCollection.deleteOne({_id: new ObjectID(postIdToDelete)})
+            await postsCollection.deleteOne({_id: new ObjectId(postIdToDelete)})
             resolve()
          } else {
             reject()
@@ -181,7 +181,7 @@ Post.countPostByAuthor = function(id) {
 
 Post.getFeed = async function(id) {
    //create an array of the different user id the current user follow
-   let followedUsers = await followsCollection.find({authorId: new ObjectID(id)}).toArray()
+   let followedUsers = await followsCollection.find({authorId: new ObjectId(id)}).toArray()
    followedUsers = followedUsers.map(function(followDoc) {
       return followDoc.followedId
    })
