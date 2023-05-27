@@ -1,0 +1,130 @@
+      <%- include('includes/header-music') %>
+      <nav class="fixed-bottom text-center nav-bottom nav-bottom-vid hide login-animate">
+        <a title="Home" href="#"><span>
+           <li class="fas fa-home"></li>
+        </span></a>
+        <a title="Search" id="search-log" href="#search-vid" class="pinpoint-search"><span>
+           <li class="fas fa-search"></li>
+        </span></a>
+        <a href="/profile/<%= user.username %>"><span><li class="fa fa-user" title="Profile"></li></span></a>
+        <a title="back" href="/"><span>
+          <li class="fa fa-sign-out-alt"></li>
+       </span></a>
+      </nav>
+      <button title="Darkmode"  id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><iclass="fas fa-moon  login-animate dark-mode-toggle "></i></button>
+    </header>
+
+
+    <main>
+      <!--search-->
+      <section class="section2-vid" id="page1">
+        <hr>
+        <div class="container-fluid div-nav-parent sticky-top">
+          <div class="row">
+            <div class=" search-music search-music-sec text-center">
+              <form action="">
+                <input type="text" placeholder="What are you looking for?" autofocus>
+                <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i></button>
+              </form>
+            </div> 
+          </div>
+          <section class="movie-nav-log">
+            <span class="movie-recent user-select-none">
+              Recent Music
+            </span><i class="vr-movie"></i>
+            <span>
+              <a href="" id="list-of-movies">Artists</a>
+            </span><i class="vr-movie"></i>
+            <span>
+              <a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Genre
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" id="afrobeat-log">AfroBeat</a>
+                <a class="dropdown-item" id="pop-log">Pop</a>
+                <a class="dropdown-item" id="r&b-log">R&B</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" id="rap-log">Rap</a>
+              </div>
+            </span><i class="vr-movie"></i>
+            <span>
+              <a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                A-Z
+              </a>
+              <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                <a class="dropdown-item musicA">A</a>
+                <a class="dropdown-item musicB">B</a>
+                <a class="dropdown-item musicC">C</a>
+                <a class="dropdown-item musicD">D</a>
+                <a class="dropdown-item musicE">E</a>
+                <a class="dropdown-item musicF">F</a>
+                <a class="dropdown-item musicG">G</a>
+                <a class="dropdown-item musicH">H</a>
+                <a class="dropdown-item musicI">I</a>
+                <a class="dropdown-item musicJ">J</a>
+                <a class="dropdown-item musicK">K</a>
+                <a class="dropdown-item musicL">L</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item musicM">M</a>
+                <a class="dropdown-item musicN">N</a>
+                <a class="dropdown-item musicO">O</a>
+                <a class="dropdown-item musicP">P</a>
+                <a class="dropdown-item musicQ">Q</a>
+                <a class="dropdown-item musicR">R</a>
+                <a class="dropdown-item musicS">S</a>
+                <a class="dropdown-item musicT">T</a>
+                <a class="dropdown-item musicU">U</a>
+                <a class="dropdown-item musicV">V</a>
+                <a class="dropdown-item musicW">W</a>
+                <a class="dropdown-item musicX">X</a>
+                <a class="dropdown-item musicY">Y</a>
+                <a class="dropdown-item musicZ">Z</a>
+              </div>
+            </span>
+            <hr>
+          </section>
+        </div><br><br>
+
+
+
+
+        <!--list of movies-->
+        <section class="list-of-movies">
+          <div class="container-fluid">
+            <div class="row text-center music-list-holder" ></div>
+          </div>
+        </section><br><br><br><br>
+        <hr class="hr-1 text-center">
+                <div class="row pop-out">
+                    <div class="col-12 text-center">
+                      <a href="music-section.html"><p class="lead login-home">Refresh</p></a>
+                    </div>
+                </div>
+        <hr class="hr-1-1 text-center">
+        <small class="form-text text-muted text-center user-select-none" style="opacity: 0.4;margin-bottom:20px;">P.S:
+          Music shown here are recent movies from 2 years back at most</small>
+        <hr>
+      </section>
+
+      <section class="list-of-movies">
+        <div class="container-fluid">
+          <div class="row text-center music-holder" ></div>
+        </div>
+      </section>
+
+      <!-- profile modal-->
+      <%- include('includes/profile') %>
+    </main>
+    
+
+
+    <%- include('includes/footer') %>
+
+    
+    <%- include('includes/script-footer') %>
+    <script src="/music.js"></script>
+  </body>
+
+</html>

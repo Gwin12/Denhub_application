@@ -1,0 +1,20 @@
+<footer>
+   <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class=" footer-p1">© 2021 ALL RIGHTS RESERVED</p>
+        </div>
+        <div class="col-sm-6">
+          <p class="footer-p2">PRIVACY POLICY TERMS & CONDITIONS</p>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<% if(user) { %>
+  <div id="chat-wrapper" class="chat-wrapper shadow border-top border-left border-right">
+    <script src="/socket.io/socket.io.js"></script>
+  </div>
+<% } %>
+
+<script src="/main-bundled.js"></script>

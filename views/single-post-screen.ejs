@@ -1,0 +1,66 @@
+      <%- include('includes/blank-header') %>
+      <button title="Darkmode" id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+      </header>
+
+
+      <main style="padding: 0% 15%;">
+         <br>
+         <section class="single-post">
+           <%- include('includes/flash') %>
+           <br>
+           <h4><%- filterUserHTML(post.title) %></h4>
+           <small><a href="/profile/<%= post.author.username %>">@<%= post.author.username %> </a> .<%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth()+1 %>/<%= post.createdDate.getFullYear() %></small>
+           
+               <% if (post.isVisitorOwner) { %>
+                  <small>
+                     <a href="/post/<%= post._id %>/edit" class="text-primary mr-2 edit-trash" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                     <button class="delete-post-button text-danger edit-trash" data-toggle="tooltip" data-placement="top" title="Delete" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-trash"></i></button>
+                  </small>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           Are you sure you want to delete?
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                           <form class="delete-post-form d-inline" action="/post/<%= post._id %>/delete" method="POST">
+                              <button class="delete-post-button text-danger edit-trash" data-toggle="tooltip" data-placement="top" title="Delete">Delete</button>
+                           </form>
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+               <% } %>
+           
+           <span><i class="fas fa-heart"></i></span>
+           <hr>
+           <p class="lead">
+              <%- filterUserHTML(post.body) %>
+           </p>
+           <hr>
+        </section>
+        
+         <div>
+            <hr class="hr-1 text-center">
+            <div class="row pop-out">
+               <div class="col-12 text-center">
+                  <a href="/profile/<%= user.username %>"><p class="lead login-home">Back</p></a>
+               </div>
+            </div>
+            <hr class="hr-1-1 text-center">
+         </div>
+
+
+
+      <%- include('includes/footer') %>
+
+
+      <%- include('includes/script-footer') %>
+   </body>

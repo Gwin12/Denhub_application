@@ -1,0 +1,55 @@
+      <%- include('includes/blank-header') %>
+      <button title="Darkmode" id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+      </header>
+
+      
+      <main style="padding: 0% 10%;" class="profile-page">
+         <%- include('includes/flash') %>
+        
+
+         <%- include('includes/profileShared') %>
+
+
+
+               <!--your post-->
+               <div class="your-posts" id="post-list">
+                  <hr>
+                  <h5> Posts</h5>
+                  <div class="collapse" id="collapseExample-01">
+                     <div class="card card-body moreinfo-body">
+                        <ul>
+                           <% posts.forEach(function(post) { %>
+                              <li>
+                                 <a href="/post/<%= post._id %>">
+                                    <h4><%- filterUserHTML(post.title) %></h4>
+                                    <small><a href="">@<%= post.author.username %></a> .<%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() +1 %>/<%= post.createdDate.getFullYear() %></small>
+                                    <form class="delete-post-form d-inline" action="#" method="POST">
+                                       <button class="delete-post-button text-danger edit-trash" data-toggle="tooltip" data-placement="top" title="Like"><i class="fas fa-heart"></i></button>
+                                    </form>
+                                    <div class="card card-body moreinfo-body pointer">
+                                       <%- filterUserHTML(post.body) %>
+                                    </div>
+                                 </a>
+                              </li>
+                              <hr>
+                           <% })%>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="post-dropdown"><a data-toggle="collapse" title="more" href="#collapseExample-01" role="button" data aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-arrow-down"></i></a></div>
+                  <hr>
+                  
+               </div><br><br>
+               
+            </div>
+         </section>
+      </main>
+
+
+
+      <%- include('includes/footer') %>
+
+
+      <%- include('includes/script-footer') %>
+   </body>
+</html>

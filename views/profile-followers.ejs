@@ -1,0 +1,49 @@
+<%- include('includes/blank-header') %>
+<button title="Darkmode" id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+</header>
+
+
+<main style="padding: 0% 10%;" class="profile-page">
+   <%- include('includes/flash') %>
+  
+
+   <%- include('includes/profileShared') %>
+
+
+
+         <!--your followers-->
+         <div class="your-posts" id="post-list">
+            <hr>
+            <h5> Followers</h5>
+            <div class="collapse" id="collapseExample-02">
+               <div class="card card-body moreinfo-body">
+                  <ul>
+                     <% followers.forEach(function(follower) { %>
+                        <li>
+                           <a href="/profile/<%= follower.username %>">
+                              
+                             <=% follower.username %>            
+                           </a>
+                        </li>
+                        <hr>
+                     <% })%>
+                  </ul>
+               </div>
+            </div>
+            <div class="post-dropdown"><a data-toggle="collapse" title="more" href="#collapseExample-02" role="button" data aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-arrow-down"></i></a></div>
+            <hr>
+            
+         </div><br><br>
+         
+      </div>
+   </section>
+</main>
+
+
+
+<%- include('includes/footer') %>
+
+
+<%- include('includes/script-footer') %>
+</body>
+</html>

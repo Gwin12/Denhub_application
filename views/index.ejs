@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style2-logged-user.css">
+    <title>Denhub</title>
+  </head>
+  <body>
+     <header id="header-home" class="fixed-top" style="background-color: var(--clr-main-back);">  
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/"><big><i>D</i></big><span>enhub</span></a>
+         </nav>
+         <nav class="fixed-bottom text-center nav-bottom nav-bottom-vid hide login-animate">
+            <a title="Home" href="#"><span>
+                <li class="fas fa-home"></li>
+              </span></a>
+            <a title="About Us" id="search-log" href="#section3"><span>
+                <li class="fas fa-info"></li>
+              </span></a>
+            <a title="Our Team" href="#section8"><span>
+               <li class="fa fa-user"></li>
+              </span></a>  
+            <a title="Contact Us" href="#section14"><span>
+                <li class="fa fa-phone"></li>
+              </span></a>
+          </nav>
+         <button title="Darkmode"  id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+     </header>
+     
+     
+     <main style="margin-top:200px">
+         <!-- Failed Login Message-->
+         <%- include('includes/flash') %>
+        <section class="section2-logged">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6">
+                  <a href="/login">
+                     <div class="vid-select text-center">
+                        <p>Login</p>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6">
+                  <a href="/register">
+                     <div class="music-select text-center">
+                        <p>Create Account</p>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+        </section><br><br>
+
+        <!--section-home3-->
+         <section class="section-home3 " id="section3">
+            <div class="container-fluid">
+            <div class="row">
+               <div class="col-12 text-center reveal">
+                  <h1>About Us</h1>
+               </div>
+            </div><br><br>
+            <div class="row text-center">
+               <div class="col-12 reveal">
+                  <h4 class="text-center">Why Denhub?</h4>
+                  <p class="lead"> We provide you with the latest movies, series and even music for download. We believe in quality and customer satisfaction, 
+                  we won't ask you to pay for anything, its a completely free website. We plan on improving our site as we go... Other features will be 
+                  introduced in the coming years. Denhub was created to prevent you from going through the annoying ads many download sites have. 
+                  Feel free to contact us on how we could improve our site to your satisfaction  </p><br><br>
+               </div>
+               </div>
+            </div>
+            </div>
+         </section><br><br>
+
+         
+
+         <!--section-home8-->
+         <section class="section-home8" id="section8">
+            <div class="container">
+            <div class="row text-center reveal">
+               <h1>Our Team</h1>
+               <p class="lead" Denhub Team combines a passion for fintech and proven record in finance, development and deep market analysis. You are in safe hands.</p>
+            </div>
+            <div class="row text-center">
+               <div class="col-lg-3 col-md-6 reveal"><img src="img/homepage/1.jfif" alt=""><h5>Luis Bakker</h5><p>CEO & Blockchain Developer</p><a href="#"><i class="fab fa-facebook-f social  "></i></a><a href="#"><i class="fab fa-linkedin social "></i></a><a href="#"><i class="fab fa-twitter social "></i></a></div>
+               <div class="col-lg-3 col-md-6 section-home8-img reveal"><img src="img/homepage/4.jfif" alt=""><h5>Emma Witherspoon</h5><p>CTO & Head of Financial Trading</p><a href="#"><i class="fab fa-facebook-f social  "></i></a><a href="#"><i class="fab fa-linkedin-in social"></i></a><a href="#"><i class="fab fa-twitter social "></i></a></div>
+               <div class="col-lg-3 col-md-6 reveal"><img src="img/homepage/3.jfif" alt=""><h5>Moses Teare</h5><p>Head UI/UX Designer & product Manager</p><a href="#"><i class="fab fa-facebook-f social "></i></a><a href="#"><i class="fab fa-linkedin-in social"></i></a><a href="#"><i class="fab fa-twitter social "></i></a></div>
+               <div class="col-lg-3 col-md-6 section-home8-img reveal"><img src="img/homepage/4.jfif" alt=""><h5>Alvaro Martin</h5><p>head of Marketing & Community manager</p><a href="#"><i class="fab fa-facebook-f social  "></i></a><a href="#"><i class="fab fa-linkedin-in social"></i></a><a href="#"><i class="fab fa-twitter social"></i></a></div>
+            </div>
+            </div>
+         </section>
+
+        <!--section-home14-->
+         <section class="section-home14" id="section14">
+            <div class="container-fluid">
+            <div class="row ">
+               <div class="col-lg-6">
+                  <h2 class="reveal">Contact Us</h2>
+                  <p class="lead reveal">We are always open and welcome to questions you have for our team. 
+                  If you wish to get in touch, please fill out the form below. Someone from our team will get back to you 
+                  shortly.
+                  </p><br><br>
+                  <div class="container-fluid">
+                     <form action="" class="login">
+                        <div class="row reveal">
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                           <label for="exampleInputName1">YOUR NAME</label>
+                           <input  class="form-control" id="exampleInputName1" placeholder="Your Name" autocomplete="off" >
+                           <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group">
+                           <div class="form-group ">
+                              <label for="exampleInputEmail1">YOUR EMAIL</label>
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email Address" autocomplete="off">
+                              <small id="emailHelp" class="form-text text-muted"></small>
+                           </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row reveal">
+                        <div class="col-12">
+                           <div class="form-group">
+                              <div class="mb-3">
+                              <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Leave your question or comment here" rows="3"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                     <button type="submit" class="btn btn-secondary reveal">SUBMIT</button>
+                     </form>
+                  </div>  
+               </div>
+               <div class="col-lg-6 text-center section-home14-contact reveal">
+                  <i class="fas fa-phone"></i><span>+1(520) 261-5682</span><br><br><br>
+                  <i class="far fa-envelope"></i><span>support Denhub.co</span>
+               </div>
+            </div><br><br>
+   
+            <div class="row text-center reveal">
+               <div class="col-12 text-center">
+                  <p>200 West Jackson Blvd</p>
+                  <p>Suite 1400</p> 
+                  <p>Chicago, IL 60606</p> 
+               </div>
+            </div>
+            </div>
+         </section>
+     </main>
+
+
+
+     <%- include('includes/footer') %>
+     
+     <script>
+      let state2 = false;
+      function showCreatePass(){
+        if (state2) {
+            document.getElementById("exampleInputPassword2").setAttribute("type", "password");
+            state2 =false;
+        }
+        else {
+            document.getElementById("exampleInputPassword2").setAttribute("type", "text");
+            state2 =true;
+        }
+      }
+     </script> 
+     <%- include('includes/script-footer') %>
+   </body>
+</html>

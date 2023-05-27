@@ -1,0 +1,83 @@
+        <%- include('includes/header-home') %>
+         <form action="/logout" method="POST" class="logout-user">
+            <nav class="fixed-bottom text-center nav-bottom login-animate">
+               <a href="#"><span><li class="fas fa-home" title="Home"></li></span></a>
+               <a href="/profile/<%= user.username %>"><span><li class="fa fa-user" title="Profile"></li></span></a>
+               <a href="/create-post"><span><li class="fa fa-plus" title="Create Post"></li></span></a>
+               <span class="header-chat-icon"><li class="fas fa-comments " title="Live Chat"></li></span>
+               <button type="submit"><span><li class="fa fa-sign-out-alt" title="Logout"></li></span></button>
+            </nav>
+         </form>
+         <button title="Darkmode" id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+     </header>
+     
+     
+     <main>
+        <section class="section2-logged">
+           <%- include('includes/flash') %>
+         <div class="container-fluid">
+            <br><br>
+            <br><br>
+            <div class="row">
+               <div class="col-md-6">
+                  <a href="/movie-page">
+                     <div class="vid-select text-center">
+                        <p>Video</p>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-md-6">
+                  <a href="/music-page">
+                     <div class="music-select text-center">
+                        <p>Music</p>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+        </section><br><br>
+
+        <section>
+         <hr>
+         <h4>Your Feed</h4>
+         <% if(posts.length) { %>
+            <div>
+               <ul>
+                  <% posts.forEach(function(post) { %>
+                     <li>
+                        <a href="/post/<%= post._id %>">
+                           <h4><%- filterUserHTML(post.title) %></h4>
+                           <small><a href="/profile/<%= post.author.username %>">@<%= post.author.username %></a> .<%= post.createdDate.getDate() %>/<%= post.createdDate.getMonth() +1 %>/<%= post.createdDate.getFullYear() %></small>
+                           <form class="delete-post-form d-inline" action="#" method="POST">
+                              <button class="delete-post-button text-danger edit-trash" data-toggle="tooltip" data-placement="top" title="Like"><i class="fas fa-heart"></i></button>
+                           </form>
+                           <div class="card card-body moreinfo-body pointer">
+                              <%- filterUserHTML(post.body) %>
+                           </div>
+                        </a>
+                     </li>
+                     <hr>
+                  <% })%>
+               </ul>
+            </div>
+         <% } else { %>
+            <div> no post</div>
+         <% } %>
+         
+         <hr>
+        </section>
+
+
+
+         <!--Profile--modal--> 
+         <%- include('includes/profile') %>
+     </main>
+
+
+
+     <%- include('includes/footer') %>
+     
+     
+     <%- include('includes/script-footer') %>
+   </body>
+</html>

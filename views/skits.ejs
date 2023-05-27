@@ -1,0 +1,93 @@
+   <%- include('includes/header-vid') %>
+   <nav class="fixed-bottom text-center nav-bottom nav-bottom-vid hide login-animate">
+      <a href="#"><span><li class="fas fa-home"></li></span></a>
+      <a href="#"><span><li class="fas fa-search"></li></span></a>
+      <<a href="/profile/<%= user.username %>"><span><li class="fa fa-user" title="Profile"></li></span></a>
+      <a href="/movie-page"><span><li class="fa fa-sign-out-alt"></li></span></a>
+   </nav>
+   <button id="dark-mode-toggle" aria-label="toggle dark mode" class="dark-moon-log"><i class="fas fa-moon  login-animate dark-mode-toggle " ></i></button>
+   </header>
+
+
+   <main>
+      <!--carousel-->
+      <%- include('includes/carousel') %>
+
+      <section class="section2-vid" id="page1">
+         <div class="container-fluid div-nav-parent sticky-top" >
+            <div class="row">
+            <div class="col-4 div-nav  text-center"><a href="/movie-page"><p class="div-nav-text" >Movies</p></a></div>
+            <div class="col-4 div-nav text-center "><a href="/tv-series"><p class="div-nav-text">Tv Series</p></a></div>
+            <div class="col-4 div-nav text-center div-nav-select"><a href="#"><p class="div-nav-text"  style="color: var(--clr-text-white)">Skits</p></a></div>
+            </div>
+            <section class="movie-nav-log" >
+               <span class="movie-recent user-select-none">
+                  Recent Movies
+               </span><i class="vr-movie"></i>
+               <span>
+               <a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Genre
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item action-log">Action</a>
+                  <a class="dropdown-item comedy-log">Comedy</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item horror-log">Horror</a>
+               </div>
+               </span><i class="vr-movie"></i>
+               <span>
+                  <a href="/list-of-movies">List Of Movies</a>
+               </span><i class="vr-movie"></i>
+               <span>
+                  <a href="">Upcoming Movies</a>
+               </span>
+               <hr>
+            </section>
+         </div><br><br>
+         
+         
+         <!--Cards-->
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-12 text-center">
+                  <h1 class="lead">COMING SOON!!</h1>                    
+               </div>
+            </div>
+         </div>
+         <br><br><br><br>
+
+         <small class="form-text text-muted text-center user-select-none" style="opacity: 0.4;margin-bottom:20px;">P.S: Movies shown here are recent movies from 2 years back at most</small>
+         <!--Pagination
+         <div aria-label="Page navigation example" class="pagination-log">
+            <ul class="pagination">
+            <li class="page-item"><a class="page-link btn-secondary active" href="#page1">1</a></li>
+            <li class="page-item"><a class="page-link btn-secondary" href="movie-page2.html">2</a></li>
+            <li class="page-item"><a class="page-link btn-secondary" href="movie-page3.html">3</a></li>
+            <li class="page-item">
+               <a class="page-link btn-secondary" href="movie-page2.html" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+               </a>
+            </li>
+            </ul>
+         </div> -->
+         <hr>
+      </section>
+
+      <!--Modals-->
+      <!--Profile--modal--> 
+      <%- include('includes/profile') %>
+
+
+   </main>
+
+   <br>
+   <br>
+   <%- include('includes/footer') %>
+
+
+   <%- include('includes/script-footer') %>
+   </body>
+</html>
+
+
+

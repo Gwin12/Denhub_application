@@ -1,0 +1,84 @@
+      <%- include('includes/full-header-vid') %>
+
+
+
+     <main>
+        <!--search-->
+        <section id="search-vid">
+            <div class=" search-music text-center">
+            <form action="">
+               <input type="text" placeholder="What are you looking for?" autofocus>
+               <button type="submit" class="btn btn-secondary"><i class="fas fa-search"></i></button>
+            </form>
+            </div>  
+        </section>
+
+        <section class="section2-vid">
+            <div class="container-fluid div-nav-parent sticky-top">
+               <div class="row">
+               <div class="col-4 div-nav div-nav-select text-center"><a href="/movie-page"><p class="div-nav-text" style="color: gray;">Movies</p></a></div>
+               <div class="col-4 div-nav text-center"><a href="/tv-series"><p class="div-nav-text">Tv Series</p></a></div>
+               <div class="col-4 div-nav text-center"><a href="/skits"><p class="div-nav-text">Skits</p></a></div>
+               </div>
+               <section class="movie-nav-log">
+                  <span class="movie-recent user-select-none">
+                     List of Movies
+                  </span><i class="vr-movie"></i>
+                  <span>
+                     <a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                       Genre
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item action-list-log">Action</a>
+                       <a class="dropdown-item comedy-list-log">Comedy</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item horror-list-log">Horror</a>
+                     </div>
+                   </span><i class="vr-movie"></i>
+                  <span>
+                     <a href="/movie-page">Recent Movies </a>
+                  </span><i class="vr-movie"></i>
+                  <span>
+                     <a href="/upcoming-movies">Upcoming Movies</a>
+                  </span>
+                  <hr>
+               </section>
+            </div><br><br>
+            
+            
+            <!--list of movies-->
+            <section class="list-of-movies">
+               <div class="container-fluid">
+                  <div class="row text-center list-holder" ></div>
+               </div>
+            </section>
+            <br><br><br>
+            <hr class="hr-1 text-center">
+               <div class="row pop-out">
+                  <div class="col-12 text-center">
+                     <a href="/list-of-movies"><p class="lead login-home">Refresh</p></a>
+                  </div>
+               </div>
+            <hr class="hr-1-1 text-center">
+
+            <small class="form-text text-muted text-center user-select-none" style="opacity: 0.8;margin-bottom:20px; color: var(--clr-text-white);">P.S: Movies shown here are recent movies from 2 years back at most</small>
+            <a href="#"><i class="fas fa-angle-double-up arrow-home-list"></i></a>
+            <hr>
+        </section>
+
+        <!--Modals-->
+        <!--Profile--modal--> 
+        <%- include('includes/profile') %>
+     </main>
+
+     <br>
+     <br>
+     <%- include('includes/footer') %>
+     
+ 
+      
+     <%- include('includes/script-footer') %>
+    <script src="/list-movies.js"></script>
+   </body>
+</html>
